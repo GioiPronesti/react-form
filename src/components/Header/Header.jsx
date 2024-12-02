@@ -1,4 +1,4 @@
-import { classNames } from '../../lib/utilities'
+import { classNames } from '../lib/utilities.js'
 import style from './Header.module.css'
 
 export default function Header() {

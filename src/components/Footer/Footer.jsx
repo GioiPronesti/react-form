@@ -1,4 +1,4 @@
-import { classNames } from '../../lib/utilities'
+import { classNames } from '../lib/utilities.js'
 import style from './Footer.module.css'
 
 export default function Footer() {
