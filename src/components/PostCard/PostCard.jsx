@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import style from './PostCard.module.css'
 import placeholder from '../../assets/not-available.jpg'
 import Tags from '../Tags/Tags.jsx';
-import TrashIcon from '../trash-icon';
+import TrashIcon from '../trash-icon.jsx';
 
 
 export default function PostCard({ onDelete = () => {} post = {} }) {

@@ -36,7 +36,7 @@ export default function Main() {
     const post = {
       id: Date.now(),
       title,
-      image: undefined
+      image: undefined,
       content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nemo asperiores ad numquam? Praesentium, iure.",
       tags: [],
       published : true
