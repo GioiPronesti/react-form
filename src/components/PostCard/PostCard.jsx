@@ -3,8 +3,10 @@ import Button from '../Button/Button';
 import style from './PostCard.module.css'
 import placeholder from '../../assets/not-available.jpg'
 import Tags from '../Tags/Tags.jsx';
+import TrashIcon from '../trash-icon';
 
-export default function PostCard({ post = {} }) {
+
+export default function PostCard({ onDelete = () => {} post = {} }) {
 
   const { 
     id,
@@ -26,7 +28,12 @@ export default function PostCard({ post = {} }) {
         <h3 className={style.card_title}>{title}</h3>
         <Tags tags={tags} />
         <p className={style.card_description}>{ content }</p>
-        <Button />
+        <div className={style.card_footer}>
+          <Button />
+          <button onClick={onDelete} className={style.icon}>
+            <TrashIcon />
+          </button>
+        </div>
       </div>
     </div>
   )
