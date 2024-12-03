@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Button from '../Button/Button';
 import style from './PostCard.module.css'
-import placeholder from '../../assets/image-holder.jpg'
+import placeholder from '../../assets/not-available.jpg'
 import Tags from '../Tags/Tags.jsx';
 
 export default function PostCard({ post = {} }) {

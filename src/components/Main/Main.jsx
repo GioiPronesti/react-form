@@ -2,10 +2,12 @@ import PostCard from '../PostCard/PostCard'
 import style from './Main.module.css'
 import { posts } from '../../posts.js'
 import Tags from '../Tags/Tags.jsx'
+import { useState } from 'react'
+import Button from '../Button/Button.jsx'
 
 export default function Main() {
 
-  const publishedPosts = posts.filter((post) => post.published === true )
+  const [publishedPosts, setPublishedPosts] = useState(posts.filter((post) => post.published === true )) 
   const tags = []
 
   posts.forEach(post => {
