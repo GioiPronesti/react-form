@@ -24,11 +24,46 @@ export default function Main() {
 
   })
 
+  const [title, setTitle] = useState("")
+
+  // Submit function
+  function addPost(e) {
+    e.preventDefault()
+
+    const newTitle = title.trim()
+    if(newTitle === "") return
+
+    const post = {
+      id: Date.now(),
+      title,
+      image: undefined
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nemo asperiores ad numquam? Praesentium, iure.",
+      tags: [],
+      published : true
+    }
+
+    setPublishedPosts([...publishedPosts, post])
+    setTitle("")
+      
+  }
+  
+  // Delete icon function
+  function deletePost(id) {
+    setPublishedPosts(publishedPosts.filter(post => post.id !== id ))
+  }
+
   console.log('tags',tags)
 
   return (
     <main>
       <section className={style.section}>
+        <div className="container">
+          <form onSubmit={addPost} action='' className='inline-form'>
+            <input value={title} onChange={() => setTitle(e.target.value)} type="text" placeholder='Titolo del post' >
+            </input>
+            <Button text='Salva' /> 
+          </form>
+        </div>
         <div className="container">
           <h1 className={style.section_title}>Il mio blog</h1>
         </div>
@@ -39,7 +74,7 @@ export default function Main() {
           <div className="row">
             { publishedPosts.map((el) => (
               <div key={el.id} className="col-4">
-                <PostCard post={el} />
+                <PostCard onDelete={() => deletePost(el.id)} post={el} />
               </div>
             ))}          
           </div>
